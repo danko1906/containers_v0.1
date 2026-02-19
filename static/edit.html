@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Kit Management</title>
+    <link rel="stylesheet" href="styles/edit.css">
+</head>
+<body>
+
+    <h1>Container Kit Viewer</h1>
+
+    <div id="container-name-header" class="container-name-section">
+        <span id="container-name-text">Default Container Name</span>
+        <button id="edit-name-btn">Edit Name</button>
+    </div>
+
+    <input type="text" id="dm-input" placeholder="Enter DM code to delete..." />
+    <div>
+        <label for="article-filter">Filter by Article:</label>
+        <select id="article-filter"></select>
+        <button id="clearButton">Clear Filters</button>
+    </div>
+	
+    <div id="error-message" class="error"></div>
+    <div id="app"></div>
+	<button id="shipmentButton">Shipment</button>
+	<button id="mainMenuButton">Main menu</button>
+
+    <audio id="error-sound" src="error.mp3"></audio>
+    <audio id="success-sound" src="success.mp3"></audio>
+
+    <div id="confirmation-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Confirm Deletion</h2>
+            <p id="modal-dm-info"></p>
+            <button id="confirm-delete-btn" class="delete-btn">Confirm</button>
+            <button id="cancel-delete-btn" class="cancel-btn">Cancel</button>
+        </div>
+    </div>
+
+    <script src="scripts/config.js"></script>
+    <script src="scripts/edit.js"></script>
+</body>
+</html>

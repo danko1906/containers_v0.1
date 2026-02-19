@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Management</title>
+    <link rel="stylesheet" href="styles/container.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Container Management</h1>
+        
+        <!-- Create Container Section -->
+        <div class="create-container">
+            <input type="text" id="containerName" placeholder="Enter container name">
+            <button id="createButton" class="btn">Create Container</button>
+        </div>
+
+        <!-- Existing Containers Section -->
+        <div class="existing-containers">
+            <label for="containersDropdown">Options:</label>
+            <input type="checkbox" id="showPackedCheckbox"> Show packed
+            <select id="containersDropdown">
+                <option value="">-- Select a Container --</option>
+            </select>
+
+            <!-- Container Actions -->
+            <div id="containerActions" class="actions">
+                <button id="goToShipmentButton" class="btn btn-disabled" disabled>Go to Shipment</button>
+                <button id="deleteButton" class="btn btn-delete" style="display: none;">Delete Container</button>
+                <button id="editButton" class="btn btn-disabled" disabled>Edit</button>
+                <button id="downloadButton" style="display: none;">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio for Error and Success -->
+    <audio id="error-sound" src="error.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="success.mp3" preload="auto"></audio>
+
+    <!-- Edit Container Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Edit Container Name</h2>
+            <input type="text" id="newContainerName" placeholder="Enter new container name">
+            <div class="modal-buttons">
+                <button id="saveButton" class="btn">Save Changes</button>
+                <button id="deleteButton" class="btn btn-delete">Delete Container</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Box -->
+    <div id="messageBox"></div>
+
+    <!-- DM Information Panel -->
+    <div id="dmInfoPanel" class="dm-info-panel">
+        <h3>DM Information</h3>
+        
+        <!-- DM Code Input Moved Here -->
+        <input type="text" id="dmInput" placeholder="Enter DM code" />
+        
+        <table>
+            <tr><td>Article:</td><td id="dmArticle"></td></tr>
+            <tr><td>Invoice ID:</td><td id="dmInvoiceDate"></td></tr>
+            <tr><td>Number:</td><td id="dmCurrentPageNum"></td></tr>
+            <tr><td>Status:</td><td id="dmStatus"></td></tr>
+            <tr><td>Container Name:</td><td id="dmContainerName"></td></tr>
+            <tr><td>Container Status:</td><td id="dmContainerStatus"></td></tr>
+            <tr><td>Packed Date:</td><td id="dmPackedDate"></td></tr>
+        </table>
+    </div>
+
+    <script src="scripts/config.js"></script>
+    <script src="scripts/container.js"></script>
+</body>
+</html>

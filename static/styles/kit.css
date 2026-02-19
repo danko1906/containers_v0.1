@@ -1,0 +1,245 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #BBDEFB;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Изменено с row на column */
+    align-items: center;
+    min-height: 100vh; /* min-height вместо height */
+    overflow-y: auto; /* Позволяет прокручивать страницу */
+}
+
+
+#app {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px; /* Можно увеличить для удобства */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    overflow-y: auto; /* Добавляем прокрутку внутри контейнера */
+    max-height: 80vh; /* Чтобы не занимал весь экран */
+}
+
+label.switch {
+    margin-top: 100px; /* Добавлен отступ сверху для выбора режима */
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+#app:hover {
+    transform: scale(1.02);
+}
+
+.input-container {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    width: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between; /* Обеспечивает равномерное распределение элементов */
+}
+
+#dmInput {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+	
+}
+
+#dmInput:focus {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+    outline: none;
+}
+
+#clearButton {
+	margin-top: -2px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2196f3;
+    color: white;
+    margin-left: 10px;
+    width: 100px; /* Уменьшаем ширину кнопки */
+}
+
+#clearButton:hover {
+    background-color: #1976d2;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.error, #warning-message {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+}
+
+.error {
+    color: #f44336;
+    top: 10px; /* Отображается на самом верху */
+}
+
+#warning-message {
+    color: #ff9800;
+    top: 10px; /* Под error */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #555;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fafafa;
+}
+
+.loading {
+    text-align: center;
+    font-size: 16px;
+    color: #2196f3;
+}
+
+button {
+    background-color: #2196f3;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 80%;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #1976d2;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.delete-mode {
+    background-color: #FFCDD2;
+}
+
+button.delete-mode {
+    background-color: #F44336;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавлена тень для кнопки в режиме удаления */
+}
+
+button.delete-mode:hover {
+    background-color: #D32F2F;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Усиленная тень при наведении */
+}
+
+input.delete-mode, textarea.delete-mode {
+    background-color: #FFEBEE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавлена тень для полей ввода в режиме удаления */
+}
+
+#clearButton.delete-mode {
+    background-color: #F44336;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавлена тень для кнопки очистки в режиме удаления */
+}
+
+#clearButton.delete-mode:hover {
+    background-color: #D32F2F;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Усиленная тень при наведении */
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+    #app {
+        padding: 15px;
+        max-width: 320px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #dmInput, input, button {
+        width: 90%;
+    }
+
+    .switch {
+        width: 50px;
+        height: 30px;
+    }
+
+    .slider:before {
+        height: 20px;
+        width: 20px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .message-box {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

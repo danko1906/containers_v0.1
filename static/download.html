@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Selection</title>
+    <link rel="stylesheet" href="styles/download.css">
+</head>
+<body>
+
+<h1>Container Selection</h1>
+
+<div class="mode-switch">
+    <label>
+        <input type="checkbox" id="multiModeCheckbox">
+        Select multiple containers
+    </label>
+</div>
+
+<div id="singleModeSection">
+    <select id="containerSelect">
+        <option value="default" disabled selected>Select a container</option>
+    </select>
+
+    <table id="containerTable" style="display:none">
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<div id="multiModeSection" style="display:none">
+    <div class="date-filter">
+        <label for="packedDateFrom">Packed date from</label>
+        <input type="date" id="packedDateFrom">
+        <label for="packedDateTo">to</label>
+        <input type="date" id="packedDateTo">
+        <button type="button" id="applyDateFilterButton">Apply filter</button>
+        <button type="button" id="resetDateFilterButton">Reset</button>
+    </div>
+    <div class="multi-toolbar">
+        <label>
+            <input type="checkbox" id="selectAllContainers">
+            Select all
+        </label>
+        <span id="selectedCount">Selected: 0</span>
+    </div>
+    <div id="multiContainerList" class="multi-list"></div>
+</div>
+
+<button id="downloadButton" disabled>Download</button>
+
+<script src="scripts/config.js"></script>
+<script src="scripts/download.js"></script>
+
+</body>
+</html>

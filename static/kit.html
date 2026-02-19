@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Kit</title>
+    <link rel="stylesheet" href="styles/kit.css">
+</head>
+<body>
+	<label class="switch">
+		<input type="checkbox" id="modeSwitch">
+		<span class="slider round"></span>
+	</label>
+	<span id="modeText">ADD Mode</span>
+    <div class="input-container">
+    <input type="text" id="dmInput" placeholder="Enter DM code (85 characters)" />
+    <button id="clearButton">Clear</button> <!-- Кнопка очистки -->
+	</div>
+	 <!-- Кнопка для переключения режима -->
+    <div id="app"></div> <!-- Контейнер для отображения информации о контейнере -->
+    <audio id="error-sound" src="error.mp3" preload="auto"></audio> <!-- Звук ошибки -->
+    <audio id="success-sound" src="success.mp3" preload="auto"></audio> <!-- Звук успеха -->
+    
+    <!-- Error and warning messages moved to the top -->
+    <div id="error-message" class="error" style="display: none;"></div>
+    <div id="warning-message" class="message-box warning" style="display: none;"></div>
+
+	<!-- Окно с ошибкой -->
+	<div id="error-popup" class="message-box error" style="display: none;">
+	  <p id="error-text"></p>
+	</div>
+	<!-- Confirmation Modal -->
+	<div id="confirmationModal" class="modal">
+		<div class="modal-content">
+			<h2 id="modalText">Are you sure?</h2>
+			<button id="confirmButton">Yes</button>
+			<button id="cancelButton">Cancel</button>
+		</div>
+	</div>
+
+    <script src="scripts/config.js"></script>
+    <script src="scripts/kit.js"></script>
+</body>
+</html>

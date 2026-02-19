@@ -91,7 +91,7 @@ class ContainerExecutor:
             created_by_id: Optional[int] = None
     ) -> Dict[str, Any]:
         base_query = """
-            SELECT container_id, container_name, container_status
+            SELECT container_id, container_name, container_status, packed_date, created_by_id
             FROM containers
         """
         query = base_query
@@ -127,10 +127,23 @@ class ContainerExecutor:
 
         try:
             rows = await self.db.fetch_all(query, params)
-            containers = [
-                {"container_id": row[0], "container_name": row[1], "container_status": row[2]}
-                for row in rows
-            ]
+            containers = []
+            for row in rows:
+                packed_date = row[3]
+                if isinstance(packed_date, datetime):
+                    packed_date = packed_date.strftime("%Y-%m-%d %H:%M:%S")
+                elif packed_date is not None:
+                    packed_date = str(packed_date)
+
+                containers.append(
+                    {
+                        "container_id": row[0],
+                        "container_name": row[1],
+                        "container_status": row[2],
+                        "packed_date": packed_date,
+                        "created_by_id": row[4],
+                    }
+                )
             return {"success": True, "containers": containers}
         except Exception as e:
             logging.error(f"Error fetching containers: {e}")

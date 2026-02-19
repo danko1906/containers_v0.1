@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #BBDEFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #333;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.login-container h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.login-container input:focus {
+    background-color: #e3f2fd;
+    border-color: #2196f3;
+    outline: none;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Увеличена интенсивность тени */
+}
+
+
+.login-container button:hover {
+    background-color: #1976d2;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35); /* Более глубокая тень при наведении */
+    transform: translateY(-2px); /* Легкий подъем кнопки */
+}
+
+
+.login-container button:active {
+    background-color: #1565c0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Уменьшение тени при нажатии */
+    transform: translateY(1px); /* Эффект нажатия */
+} 
+.error {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Адаптация для экранов 480x800 */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    .login-container {
+        padding: 15px;
+    }
+    .login-container h2 {
+        font-size: 20px;
+    }
+    .login-container input, 
+    .login-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
