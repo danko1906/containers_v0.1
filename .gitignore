@@ -1,0 +1,60 @@
+# =========================
+# PyCharm / IntelliJ
+# =========================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# =========================
+# Python cache / bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Virtual env
+# =========================
+.venv/
+venv/
+env/
+
+# =========================
+# Build / dist / packaging
+# =========================
+build/
+dist/
+*.spec
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheels/
+
+# PyInstaller (если используешь)
+main.dist/
+main.build/
+
+# =========================
+# Local configs / secrets
+# =========================
+.env
+.env.*
+*.local
+*.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Optional: compiled assets
+# =========================
+*.tmp
+*.bak
